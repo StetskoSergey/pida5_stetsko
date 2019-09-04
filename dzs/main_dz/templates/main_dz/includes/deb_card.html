@@ -1,0 +1,34 @@
+ <div class="card mb-4">
+          <div class = "card-header">
+            {{deb.title}} ИНН {{deb.inn}}, КПП  {{deb.kpp}}
+          </div>
+          <div class = "card-body">
+              <h5 class = "card-title"> {{deb.ur_forma.short }} {{deb.title}}</h5>
+              <p class="card-text"> {{ deb.ur_type.title}} </p>
+
+
+
+              <p class="card-text"> Полное наименование: {{deb.p_title}} </p>
+              <p class="card-text"> Юридический адрес: {{deb.u_adress}} </p>
+              <p class="card-text"> Фактический адрес: {{deb.f_adress}} </p>
+              <p class="card-text"> телефон: {{deb.telef}} </p>
+
+           </div>
+       <div class = "card-footer text-muted" >
+           Расчетные счета :
+         {% for sh in scheta %}
+           <p>  Номер счета {{ sh.n_scheta}} в банке  {{  sh.bank.title }}</p>
+         {% endfor %}
+
+        </div>
+
+
+       <div class = "card-footer text-muted" >
+           Связанные лица :
+         {% for d in debs %}
+           <a href ="{{ d.get_absolut_url }}">  {{ d.title}} ИНН {{d.inn}}   , КПП {{d.kpp}} </a>
+         {% endfor %}
+
+        </div>
+
+</div>

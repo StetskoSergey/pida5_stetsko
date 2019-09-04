@@ -1,0 +1,20 @@
+{% extends 'main_dz/main_dz.html' %}
+
+{% block title %}
+      Список дебиторов
+{% endblock %}
+
+{% block content %}
+      <h1 class = "mb-5">  Список дебиторов : </h1>
+      {% for deb in object_list %}
+      <div class="card mb-4">
+          <div class = "card-header">
+
+          </div>
+          <div class = "card-body">
+              <h5 class = "card-title"> <a href = "{{deb.get_absolut_url}}"> {{ deb.title}} {{ deb.slug}} </a> </h5>
+
+          </div>
+        </div>
+      {% endfor %}
+{% endblock %}
